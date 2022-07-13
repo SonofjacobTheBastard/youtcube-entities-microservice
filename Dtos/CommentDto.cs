@@ -1,6 +1,8 @@
+using YoutCubeEntitiesMicroservice.Interfaces;
+
 namespace YoutCubeEntitiesMicroservice.Dtos
 {
-    public class CommentDto
+    public class CommentDto : IDto
     {
         public Guid Id { get; set; }
         public Guid VideoId { get; set; }

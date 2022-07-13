@@ -1,8 +1,9 @@
-using YoutCubeRelationalDatabaseConnection.Interfaces;
+using YoutCubeEntitiesMicroservice.Interfaces;
 using YoutCubeEntitiesMicroservice.Extensions;
 using YoutCubeEntitiesMicroservice.Models;
 using YoutCubeEntitiesMicroservice.Repositories;
-using YoutCubeEntitiesMicroservice.DevelopmentTesting;
+using YoutCubeEntitiesMicroservice.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +15,18 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+builder.Services.AddDbContext<CommonContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EntitiesDatabase"));
+});
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddScoped<IRepository<Video>, VideoRepository>();
 builder.Services.AddScoped<IRepository<Comment>, CommentRepository>();
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
+
+
 
 var app = builder.Build();
 

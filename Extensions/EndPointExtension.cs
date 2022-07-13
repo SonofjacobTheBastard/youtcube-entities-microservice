@@ -1,6 +1,6 @@
 
 using AutoMapper;
-using YoutCubeRelationalDatabaseConnection.Interfaces;
+using YoutCubeEntitiesMicroservice.Interfaces;
 using YoutCubeEntitiesMicroservice.Dtos;
 using YoutCubeEntitiesMicroservice.Models;
 
@@ -12,11 +12,11 @@ namespace YoutCubeEntitiesMicroservice.Extensions
         {
 
 
-            app.MapGet("api/v1/comments", async (IRepository<Comment> repo, IMapper mapper, Video videoDto) =>
-            {
-                var comments = await repo.GetAllAsync(c => c.VideoId == videoDto.Id);
-                return Results.Ok(mapper.Map<IEnumerable<CommentDto>>(comments));
-            });
+            // app.MapGet("api/v1/comments", async (IRepository<Comment> repo, IMapper mapper, Video videoDto) =>
+            // {
+            //     var comments = await repo.GetAllAsync(c => c.VideoId == videoDto.Id);
+            //     return Results.Ok(mapper.Map<IEnumerable<CommentDto>>(comments));
+            // });
 
             app.MapGet("api/v1/comments/{id}", async (IRepository<Comment> repo, IMapper mapper, Guid id) =>
             {

@@ -1,6 +1,8 @@
+using YoutCubeEntitiesMicroservice.Interfaces;
+
 namespace YoutCubeEntitiesMicroservice.Dtos
 {
-    public class UserDto
+    public class UserDto : IDto
     {
         public int Id { get; set; }
         public string Username { get; set; }

@@ -1,5 +1,5 @@
 
-using YoutCubeRelationalDatabaseConnection.Interfaces;
+using YoutCubeEntitiesMicroservice.Interfaces;
 
 namespace YoutCubeEntitiesMicroservice.Dtos
 {
@@ -12,14 +12,14 @@ namespace YoutCubeEntitiesMicroservice.Dtos
         public int Views { get; set; }
         public List<CommentDto>? Comments { get; set; }
 
-        public VideoDto(Guid id, string title, string url, string description, int views, List<CommentDto> comments)
+        public VideoDto(string title, string url, string description)
         {
-            Id = id;
+            Id = new Guid();
             Title = title;
             Url = url;
             Description = description;
-            Views = views;
-            Comments = comments;
+            Views = 0;
+            Comments = new List<CommentDto>();
         }
 
     }

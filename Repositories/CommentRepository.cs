@@ -1,5 +1,5 @@
-using YoutCubeRelationalDatabaseConnection.Context;
-using YoutCubeRelationalDatabaseConnection.Repositories;
+using YoutCubeEntitiesMicroservice.Context;
+using YoutCubeEntitiesMicroservice.Repositories;
 using YoutCubeEntitiesMicroservice.Models;
 
 namespace YoutCubeEntitiesMicroservice.Repositories

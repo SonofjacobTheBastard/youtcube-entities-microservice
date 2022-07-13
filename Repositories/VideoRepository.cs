@@ -1,5 +1,4 @@
-using YoutCubeRelationalDatabaseConnection.Context;
-using YoutCubeRelationalDatabaseConnection.Repositories;
+using YoutCubeEntitiesMicroservice.Context;
 using YoutCubeEntitiesMicroservice.Models;
 
 namespace YoutCubeEntitiesMicroservice.Repositories
@@ -8,7 +7,7 @@ namespace YoutCubeEntitiesMicroservice.Repositories
     {
         public VideoRepository(CommonContext context) : base(context)
         {
-          
+
         }
     }
 }

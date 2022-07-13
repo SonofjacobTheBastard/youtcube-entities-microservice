@@ -1,5 +1,5 @@
 
-using YoutCubeRelationalDatabaseConnection.Interfaces;
+using YoutCubeEntitiesMicroservice.Interfaces;
 
 namespace YoutCubeEntitiesMicroservice.Models
 {

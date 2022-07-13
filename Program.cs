@@ -24,7 +24,6 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IRepository<Video>, VideoRepository>();
 builder.Services.AddScoped<IRepository<Comment>, CommentRepository>();
-builder.Services.AddScoped<IRepository<User>, UserRepository>();
 
 
 

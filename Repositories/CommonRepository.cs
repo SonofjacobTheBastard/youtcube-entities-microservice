@@ -10,12 +10,10 @@ namespace YoutCubeEntitiesMicroservice.Repositories
     public class CommonRepository<T> : IRepository<T> where T : class, IEntity
     {
         private readonly CommonContext context;
-        private DbSet<T> entities;
 
         public CommonRepository(CommonContext context)
         {
             this.context = context;
-            entities = context.Set<T>();
         }
 
         public virtual async Task AddAsync(T entity)

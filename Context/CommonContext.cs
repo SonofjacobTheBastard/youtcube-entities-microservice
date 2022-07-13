@@ -9,7 +9,6 @@ namespace YoutCubeEntitiesMicroservice.Context
 
         public DbSet<Video> Videos => Set<Video>();
         public DbSet<Comment> Comments => Set<Comment>();
-        public DbSet<User> Users => Set<User>();
 
         public CommonContext(DbContextOptions<CommonContext> opt) : base(opt)
         {

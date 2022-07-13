@@ -63,10 +63,9 @@ namespace YoutCubeEntitiesMicroservice.Repositories
         }
 
         public virtual async Task UpdateAsync(T entity)
-        { // check again
-            EntityEntry entityEntry = context.Entry<T>(entity);
-            entityEntry.State = EntityState.Modified;
-
+        {
+            await DeleteAsync(entity.Id);
+            await AddAsync(entity);
             await context.SaveChangesAsync();
         }
     }

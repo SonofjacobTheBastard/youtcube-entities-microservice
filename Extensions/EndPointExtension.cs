@@ -43,7 +43,7 @@ namespace YoutCubeEntitiesMicroservice.Extensions
 
             app.MapPut("api/v1/comments/{id}", async (IRepository<Comment> repo, IMapper mapper, Guid id, UpdateCommentDto CommentDto) =>
             {
-                var comment = repo.GetByIdAsync(CommentDto.Id).Result;
+                var comment = repo.GetByIdAsync(id).Result;
                 if (comment == null)
                 {
                     return Results.NotFound();
@@ -92,14 +92,15 @@ namespace YoutCubeEntitiesMicroservice.Extensions
 
             });
 
-            app.MapPut("api/v1/videos/{id}", async (IRepository<Video> repo, IMapper mapper, Guid id, ReadVideoDto videoDto) =>
+            app.MapPut("api/v1/videos/{id}", async (IRepository<Video> repo, IMapper mapper, Guid id, UpdateVideoDto videoDto) =>
             {
-                var video = repo.GetByIdAsync(videoDto.Id).Result;
+                var video = repo.GetByIdAsync(id).Result;
                 if (video == null)
                 {
                     return Results.NotFound();
                 }
                 video = mapper.Map<Video>(videoDto);
+                video.Id = id;
                 await repo.UpdateAsync(video);
                 return Results.NoContent();
             });

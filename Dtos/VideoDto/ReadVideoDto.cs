@@ -1,5 +1,6 @@
 
 using YoutCubeEntitiesMicroservice.Interfaces;
+using YoutCubeEntitiesMicroservice.Models;
 
 namespace YoutCubeEntitiesMicroservice.Dtos.VideoDto
 {
@@ -9,5 +10,6 @@ namespace YoutCubeEntitiesMicroservice.Dtos.VideoDto
         public string? Title { get; set; }
         public string? Url { get; set; }
         public string? Description { get; set; }
+
     }
 }

@@ -1,6 +1,6 @@
 
 using AutoMapper;
-using YoutCubeEntitiesMicroservice.Dtos;
+using YoutCubeEntitiesMicroservice.Dtos.CommentDto;
 using YoutCubeEntitiesMicroservice.Models;
 
 namespace YoutCubeEntitiesMicroservice.Profiles
@@ -9,8 +9,10 @@ namespace YoutCubeEntitiesMicroservice.Profiles
     {
         public CommentProfile()
         {
-            // Source -> Target
-            CreateMap<Comment, CommentDto>();
+            // Source -> Target            
+            CreateMap<Comment, ReadCommentDto>();
+            CreateMap<CreateCommentDto, Comment>();
+            CreateMap<UpdateCommentDto, Comment>();
         }
     }
 }

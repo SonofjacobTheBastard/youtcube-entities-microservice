@@ -1,10 +1,16 @@
 
 using Microsoft.EntityFrameworkCore;
+using YoutCubeEntitiesMicroservice.Models;
 
 namespace YoutCubeEntitiesMicroservice.Context
 {
     public class CommonContext : DbContext
     {
+
+        public DbSet<Video> Videos => Set<Video>();
+        public DbSet<Comment> Comments => Set<Comment>();
+        public DbSet<User> Users => Set<User>();
+
         public CommonContext(DbContextOptions<CommonContext> opt) : base(opt)
         {
 

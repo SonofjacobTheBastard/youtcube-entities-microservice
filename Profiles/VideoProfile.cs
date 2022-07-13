@@ -1,5 +1,5 @@
 using AutoMapper;
-using YoutCubeEntitiesMicroservice.Dtos;
+using YoutCubeEntitiesMicroservice.Dtos.VideoDto;
 using YoutCubeEntitiesMicroservice.Models;
 
 namespace YoutCubeEntitiesMicroservice.Profiles
@@ -9,7 +9,11 @@ namespace YoutCubeEntitiesMicroservice.Profiles
         public VideoProfile()
         {
             // Source -> Target
-            CreateMap<Video, VideoDto>();
+
+
+            CreateMap<Video, ReadVideoDto>();
+            CreateMap<CreateVideoDto, Video>();
+            CreateMap<UpdateVideoDto, Video>();
         }
     }
 }
